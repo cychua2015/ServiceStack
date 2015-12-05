@@ -97,6 +97,12 @@ namespace Funq
             return entry != null;
         }
 
+        public bool Exists<TService>(string name)
+        {
+            var entry = GetEntry<TService, Func<Container, TService>>(name, throwIfMissing: false);
+            return entry != null;
+        }
+
         private Dictionary<Type, Action<object>[]> autoWireCache = new Dictionary<Type, Action<object>[]>();
 
         private static MethodInfo GetResolveMethod(Type typeWithResolveMethod, Type serviceType)

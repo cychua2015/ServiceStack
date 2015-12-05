@@ -13,7 +13,7 @@ namespace Funq
     }
 
 	/// <include file='Container.xdoc' path='docs/doc[@for="Container"]/*'/>
-	public sealed partial class Container : IDisposable
+	public partial class Container : IDisposable
 	{
 		Dictionary<ServiceKey, ServiceEntry> services = new Dictionary<ServiceKey, ServiceEntry>();
         Dictionary<ServiceKey, ServiceEntry> servicesReadOnlyCopy;
